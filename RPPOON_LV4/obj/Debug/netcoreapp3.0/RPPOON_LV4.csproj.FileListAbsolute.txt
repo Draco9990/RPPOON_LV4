@@ -1,0 +1,11 @@
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.exe
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.deps.json
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.runtimeconfig.json
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.runtimeconfig.dev.json
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.dll
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\bin\Debug\netcoreapp3.0\RPPOON_LV4.pdb
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\obj\Debug\netcoreapp3.0\RPPOON_LV4.csprojAssemblyReference.cache
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\obj\Debug\netcoreapp3.0\RPPOON_LV4.AssemblyInfoInputs.cache
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\obj\Debug\netcoreapp3.0\RPPOON_LV4.AssemblyInfo.cs
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\obj\Debug\netcoreapp3.0\RPPOON_LV4.dll
+C:\Users\Draco\Documents\GitHub\RPPOON_LV4\RPPOON_LV4\obj\Debug\netcoreapp3.0\RPPOON_LV4.pdb
