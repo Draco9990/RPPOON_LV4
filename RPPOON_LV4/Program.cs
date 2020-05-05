@@ -21,6 +21,10 @@ namespace RPPOON_LV4
             Dataset csv = new Dataset(@"C:\csv.csv");
             Adapter adapter = new Adapter(new Analyzer3rdParty());
             double[][] matrix = adapter.ConvertData(csv);
+            foreach(double d in adapter.CalculateAveragePerColumn(csv))
+            {
+                Console.WriteLine(d);
+            }
             Debug(matrix);
             Console.WriteLine("\n***************************************\n");
         }
@@ -28,24 +32,30 @@ namespace RPPOON_LV4
         public static void Zadatak3()
         {
             Console.WriteLine("Zadatak 3\n");
-            List<IRentable> list = new List<IRentable>();
-            list.Add(new Book("Zlocin i kazna"));
-            list.Add(new Video("Sam u kuci"));
+            List<IRentable> list = new List<IRentable>
+            {
+                new Book("Zlocin i kazna"),
+                new Video("Sam u kuci")
+            };
             RentingConsolePrinter printer = new RentingConsolePrinter();
             printer.DisplayItems(list);
+            printer.PrintTotalPrice(list);
             Console.WriteLine("\n***************************************\n");
         }
 
         public static void Zadatak4()
         {
             Console.WriteLine("Zadatak 4\n");
-            List<IRentable> list = new List<IRentable>();
-            list.Add(new Book("Zlocin i kazna"));
-            list.Add(new Video("Sam u kuci"));
-            list.Add(new HotItem(new Book("Zlocin i kazna 2")));
-            list.Add(new HotItem(new Video("Sam u kuci 2")));
+            List<IRentable> list = new List<IRentable>
+            {
+                new Book("Zlocin i kazna"),
+                new Video("Sam u kuci"),
+                new HotItem(new Book("Zlocin i kazna 2")),
+                new HotItem(new Video("Sam u kuci 2"))
+            };
             RentingConsolePrinter printer = new RentingConsolePrinter();
             printer.DisplayItems(list);
+            printer.PrintTotalPrice(list);
             Console.WriteLine("\n***************************************\n");
             //Sada imamo Trending: Prije imena
         }
@@ -53,11 +63,16 @@ namespace RPPOON_LV4
         public static void Zadatak5()
         {
             Console.WriteLine("Zadatak 5\n");
-            List<IRentable> flashSale = new List<IRentable>();
-            flashSale.Add(new DiscountedItem(new Book("Zlocin i kazna")));
-            flashSale.Add(new DiscountedItem(new Video("Sam u kuci")));
+            List<IRentable> flashSale = new List<IRentable>
+            {
+                new DiscountedItem(new Book("Zlocin i kazna")),
+                new DiscountedItem(new Video("Sam u kuci")),
+                new DiscountedItem(new HotItem(new Book("Zlocin i kazna 2"))),
+                new DiscountedItem(new HotItem(new Video("Sam u kuci 2")))
+            };
             RentingConsolePrinter printer = new RentingConsolePrinter();
             printer.DisplayItems(flashSale);
+            printer.PrintTotalPrice(flashSale);
             Console.WriteLine("\n***************************************\n");
         }
 
@@ -65,31 +80,29 @@ namespace RPPOON_LV4
         {
             Console.WriteLine("Zadatak 6\n");
             EmailValidator emailValidator = new EmailValidator();
-            string email = "msismanovic@etfos.hr";
-            Console.WriteLine(email + " is" + (emailValidator.IsValidAddress(email) ? "" : " not") + " valid!");
             PasswordValidator passwordValidator = new PasswordValidator(5);
-            string password = "Vm123!";
-            Console.WriteLine(password + " is" + (passwordValidator.IsValidPassword(password)?"":" not") + " valid!");
+            string email = "msismanovic@etfos.hr";
+            string password = "Vm123";
+            Console.WriteLine(email + " is" + (emailValidator.IsValidAddress(email) ? "" : " not") + " valid!");
+            Console.WriteLine(password + " is" + (passwordValidator.IsValidPassword(password) ? "" : " not") + " valid!");
             Console.WriteLine("\n***************************************\n");
-
         }
 
         public static void Zadatak7()
         {
             Console.WriteLine("Zadatak 7\n");
 
-            UserEntry entry = UserEntry.ReadUserFromConsole();
-            Fasade fasade = new Fasade(new EmailValidator(), new PasswordValidator(5));
-            while (!fasade.IsUserEntryValid(entry))
+            UserEntry entry;
+            Fasade fasade = new Fasade(5);
+            do
             {
                 entry = UserEntry.ReadUserFromConsole();
             }
+            while (!fasade.IsUserEntryValid(entry));
             Console.WriteLine("\n***************************************\n");
-
         }
 
-
-        static void Debug(double[][] f)
+        public static void Debug(double[][] f)
         {
             for (int i = 0; i < f.Length; i++)
             {
@@ -99,7 +112,6 @@ namespace RPPOON_LV4
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine();
         }
     }
 }

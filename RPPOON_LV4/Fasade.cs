@@ -6,14 +6,13 @@ namespace RPPOON_LV4
 {
     class Fasade : IRegistrationValidator
     {
-
-        EmailValidator emailValidator = new EmailValidator();
-        PasswordValidator passwordValidator = new PasswordValidator(5);
-
-        public Fasade(EmailValidator emailValidatorIn, PasswordValidator passwordValidatorIn)
+        EmailValidator emailValidator;
+        PasswordValidator passwordValidator;
+        
+        public Fasade(int minLength)
         {
-            emailValidator = emailValidatorIn;
-            passwordValidator = passwordValidatorIn;
+            emailValidator = new EmailValidator();
+            passwordValidator = new PasswordValidator(minLength);
         }
 
         public bool IsUserEntryValid(UserEntry entry)

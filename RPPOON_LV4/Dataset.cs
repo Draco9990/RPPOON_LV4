@@ -27,8 +27,7 @@ namespace RPPOON_LV4
         }
         public IList<List<double>> GetData()
         {
-            return
-           new System.Collections.ObjectModel.ReadOnlyCollection<List<double>>(this.data);
+            return new System.Collections.ObjectModel.ReadOnlyCollection<List<double>>(this.data);
         }
     }
 }

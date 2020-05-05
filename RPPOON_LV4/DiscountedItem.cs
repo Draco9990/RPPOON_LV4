@@ -17,6 +17,7 @@ namespace RPPOON_LV4
         {
             DiscountPerc = discPerc;
         }
+
         public override String Description
         {
             get

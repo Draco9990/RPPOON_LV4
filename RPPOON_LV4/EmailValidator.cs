@@ -12,7 +12,17 @@ namespace RPPOON_LV4
             {
                 return false;
             }
-            return candidate.Contains("@") && (candidate.EndsWith(".com")|| candidate.EndsWith(".hr"));
+            return ContainsAt(candidate) && EndsWith(candidate);
+        }
+
+        public bool ContainsAt(string candidate)
+        {
+            return candidate.Contains("@");
+        }
+
+        public bool EndsWith(string candidate)
+        {
+            return candidate.EndsWith(".com") || candidate.EndsWith(".hr");
         }
     }
 }

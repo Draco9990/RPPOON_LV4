@@ -9,7 +9,7 @@ namespace RPPOON_LV4
     {
         public void PrintTotalPrice(List<IRentable> items)
         {
-            Console.WriteLine(items.Sum(r => r.CalculatePrice()));
+            Console.WriteLine("Ukupna cijena: " + items.Sum(r => r.CalculatePrice()) + "kn");
         }
         public void DisplayItems(List<IRentable> items)
         {
